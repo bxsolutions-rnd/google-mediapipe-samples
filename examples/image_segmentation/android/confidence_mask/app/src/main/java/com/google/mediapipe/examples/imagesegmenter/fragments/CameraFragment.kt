@@ -121,7 +121,7 @@ class CameraFragment : Fragment(), ImageSegmenterHelper.SegmenterListener {
         return fragmentCameraBinding.root
     }
 
-    @SuppressLint("MissingPermission")
+//    @SuppressLint("MissingPermission")
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         backgroundExecutor = Executors.newSingleThreadExecutor()
@@ -138,10 +138,12 @@ class CameraFragment : Fragment(), ImageSegmenterHelper.SegmenterListener {
                 // Set up the camera and its use cases
                 setUpCamera()
             }
+
+            // Attach listeners to UI control widgets
+            initBottomSheetControls()
         }
         fragmentCameraBinding.overlayView.setRunningMode(RunningMode.LIVE_STREAM)
-        // Attach listeners to UI control widgets
-        initBottomSheetControls()
+
     }
 
     // Initialize CameraX, and prepare to bind the camera use cases

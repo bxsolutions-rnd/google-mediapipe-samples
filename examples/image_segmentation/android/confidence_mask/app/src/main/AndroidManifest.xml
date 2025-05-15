@@ -16,8 +16,7 @@
 -->
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:dist="http://schemas.android.com/apk/distribution"
-    xmlns:tools="http://schemas.android.com/tools"
-    package="com.google.mediapipe.examples.imagesegmenter">
+    xmlns:tools="http://schemas.android.com/tools">
 
     <!-- Enable instant app support -->
     <dist:module dist:instant="true" />
@@ -27,6 +26,10 @@
 
     <!-- Declare permissions -->
     <uses-permission android:name="android.permission.CAMERA" />
+
+    <!-- Required only if your app targets Android 13 or higher. -->
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS"/>
+    <uses-permission android:name="com.google.android.gms.permission.AD_ID"/>
 
     <application
         android:allowBackup="true"
